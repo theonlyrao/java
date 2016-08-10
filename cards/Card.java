@@ -10,5 +10,10 @@ public class Card {
     public String getSuite() {
 	return this.suite;
     }
+
+    public String getRank() {
+	return this.rank;
+    }
+    
 }
 
