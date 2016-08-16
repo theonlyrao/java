@@ -3,7 +3,6 @@ class GameRunner {
 	Game game = new Game();
 	while(game.getInProgress()){
 	    game.askPlayer();
-	    game.fire();
 	    game.respond();
 	}
 	System.out.println("Game over after " + game.getShots() + " shots.");
