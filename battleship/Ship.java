@@ -24,4 +24,8 @@ class Ship {
     public String getPosition(){
 	return this.position;
     }
+
+    public void destroy(){
+	this.status = false;
+    }
 }

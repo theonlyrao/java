@@ -40,6 +40,7 @@ class Game {
 	boolean hit = board.checkShot(lastShot);
 	if (hit == true){
 	    System.out.println("You hit!");
+	    this.checkShipStatuses();
 	} else {
 	    System.out.println("You missed.");
 	}
@@ -51,5 +52,14 @@ class Game {
 
     public boolean getInProgress(){
 	return inProgress;
+    }
+
+    public void checkShipStatuses(){
+	this.inProgress = false;
+	for(int i = 0; i < this.gameShips.length; i++){
+	    if(this.gameShips [i].getStatus() == true){
+		this.inProgress = true;
+	    }
+	}
     }
 }
