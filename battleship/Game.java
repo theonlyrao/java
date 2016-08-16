@@ -2,7 +2,7 @@ import java.io.*;
 
 class Game {
     Ship[] gameShips = new Ship[3];
-    Board board = new Board(gameShips);
+    Board board;	    
     int shots = 0;
     String lastShot;
     boolean inProgress = true;
@@ -11,13 +11,14 @@ class Game {
 	for(int i = 0; i < gameShips.length; i++){
 	    gameShips[i] = new Ship();
 	}
+	this.board = new Board(gameShips);
     }
 
     public void askPlayer(){
 	System.out.println("Please input your desired target.");
 	try {
 	    BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
-	    String inputLine = is.readLine();
+	    String inputLine = is.readLine().trim();
 	    this.fire(inputLine);
 	    System.out.println("You fired at: " + inputLine + ".");
 	} catch (IOException e) {
@@ -37,7 +38,7 @@ class Game {
 
     public void respond(){
 	boolean hit = board.checkShot(lastShot);
-	if (hit){
+	if (hit == true){
 	    System.out.println("You hit!");
 	} else {
 	    System.out.println("You missed.");
