@@ -5,8 +5,8 @@ class PriorityQueue {
     }
 
     public String deleteMin(){
-	Node newNode = new Node();	
-	return newNode.parent;
+	Node newNode = new Node("IIOPRRTY", null, null);	
+	return newNode.getData();
     }
 }
 
