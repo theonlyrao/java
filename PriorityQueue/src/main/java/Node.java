@@ -9,6 +9,19 @@ public class Node {
 	childTwo = givenChildTwo;
     }
 
+    public Node(String givenData, String givenChildOne){
+	data = givenData;
+	childOne = givenChildOne;
+	childTwo = null;
+    }
+
+    public Node(String givenData){
+	data = givenData;
+	childOne = null;
+	childTwo = null;
+    }
+
+
     public String getData(){
 	return this.data;
     }

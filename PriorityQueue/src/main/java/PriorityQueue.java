@@ -15,7 +15,16 @@ class PriorityQueue {
 
     public PriorityQueue(String unorderedString){
 	String original = unorderedString;
+
+	String[] originalChars = new String[original.length()];
+	for (int i = 0; i < original.length(); i++) {
+	    originalChars[i] = Character.toString(original.charAt(i));
+	}
     }
+
+    // publc Node makeNode(String[] characters){
+	
+    // }
 
     public Node min(){
 	Node minNode = new Node("A", "B", "C");
