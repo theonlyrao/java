@@ -14,7 +14,7 @@ public class PriorityQueueTest {
     //     assertEquals("IOPRRTY", classUnderTest.deleteMin());
     // }
 
-    @Test public void makeNode() {
+    @Test public void trivialMakeNode() {
 	PriorityQueue classUnderTest = new PriorityQueue("test");
 	String[] chars = new String[1];
 	chars[0] = "B";
@@ -24,4 +24,13 @@ public class PriorityQueueTest {
 	assertEquals("B", aNode.getChildOne());
 	assertEquals(null, aNode.getChildTwo());
     }
+
+    @Test public void priorityQueueExists() {
+	PriorityQueue classUnderTest = new PriorityQueue("AB");
+
+	assertThat(classUnderTest.nodes[0]).isInstanceOf(Node.class);	
+	assertEquals(classUnderTest.nodes[0].getData(), "A");
+	assertEquals(classUnderTest.nodes[1].getData(), "B");	
+    }
+    
 }

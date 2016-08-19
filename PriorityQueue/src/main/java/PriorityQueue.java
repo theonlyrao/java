@@ -12,6 +12,8 @@ class PriorityQueue {
 	alphabet = Collections.unmodifiableMap(myMap);
     }
 
+    Node[] nodes;
+
     public PriorityQueue(String unorderedString){
 	String original = unorderedString;
 	int len = original.length();
@@ -21,9 +23,10 @@ class PriorityQueue {
 	    originalChars[i] = Character.toString(original.charAt(i));
 	}
 
-	Node[] nodes = new Node[len];
+	nodes = new Node[len];
 	for (int i = 0; i < len; i++){
-	    this.makeNode(originalChars[i], Arrays.copyOfRange(originalChars, i, len));
+	    nodes[i] = this.makeNode(originalChars[i], Arrays.copyOfRange(originalChars, i, len));
+	    System.out.println("Made node " + i);
 	}
     }
 
