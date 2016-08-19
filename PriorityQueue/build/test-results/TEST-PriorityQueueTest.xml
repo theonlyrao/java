@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PriorityQueueTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-08-19T10:51:18" hostname="Ashwins-MacBook-Pro-2.local" time="0.066">
+<testsuite name="PriorityQueueTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-08-19T11:28:14" hostname="Ashwins-MacBook-Pro-2.local" time="0.066">
   <properties/>
   <testcase name="priorityQueueExists" classname="PriorityQueueTest" time="0.062"/>
   <testcase name="trivialMakeNode" classname="PriorityQueueTest" time="0.004"/>
-  <system-out><![CDATA[Made node 0
-Made node 1
-Made node 0
-Made node 1
-Made node 2
-Made node 3
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

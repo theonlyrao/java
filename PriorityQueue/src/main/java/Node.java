@@ -21,7 +21,6 @@ public class Node {
 	childTwo = null;
     }
 
-
     public String getData(){
 	return this.data;
     }
@@ -34,5 +33,8 @@ public class Node {
 	return this.childTwo;
     }
 
+    public String toString(){
+	return (this.data + ", " + this.childOne + ", " + this.childTwo);
+    }
 
 }

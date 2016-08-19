@@ -28,9 +28,12 @@ public class PriorityQueueTest {
     @Test public void priorityQueueExists() {
 	PriorityQueue classUnderTest = new PriorityQueue("AB");
 
-	assertThat(classUnderTest.nodes[0]).isInstanceOf(Node.class);	
+	assertThat(classUnderTest.nodes[0]).isInstanceOf(Node.class);
+	assertThat(classUnderTest.nodes[1]).isInstanceOf(Node.class);		
 	assertEquals(classUnderTest.nodes[0].getData(), "A");
-	assertEquals(classUnderTest.nodes[1].getData(), "B");	
+	assertEquals(classUnderTest.nodes[0].getChildOne(), "B");	
+	assertEquals("B", classUnderTest.nodes[1].getData());
+	assertEquals(null, classUnderTest.nodes[1].getChildOne());	
     }
     
 }

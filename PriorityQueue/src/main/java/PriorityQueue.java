@@ -25,13 +25,18 @@ class PriorityQueue {
 
 	nodes = new Node[len];
 	for (int i = 0; i < len; i++){
-	    nodes[i] = this.makeNode(originalChars[i], Arrays.copyOfRange(originalChars, i, len));
-	    System.out.println("Made node " + i);
+	    nodes[i] = this.makeNode(originalChars[i], Arrays.copyOfRange(originalChars, i + 1, len));
 	}
     }
 
     public Node makeNode(String data, String[] characters){
-	Node node = new Node(data, characters[0]);
+	Node node = new Node(null);
+	if (characters.length == 0) {
+	    node = new Node(data, null, null);
+	} else {
+	    String childOne = characters[0];
+	    node = new Node(data, childOne, null);
+	}
 	return node;
     }
 
