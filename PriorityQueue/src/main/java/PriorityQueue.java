@@ -1,6 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Collections;
+import java.util.Arrays;
 
 class PriorityQueue {
     private static final Map<String, Integer> alphabet;
@@ -10,21 +11,26 @@ class PriorityQueue {
 	myMap.put("B", 2);
 	alphabet = Collections.unmodifiableMap(myMap);
     }
-    
-    
 
     public PriorityQueue(String unorderedString){
 	String original = unorderedString;
+	int len = original.length();
 
-	String[] originalChars = new String[original.length()];
-	for (int i = 0; i < original.length(); i++) {
+	String[] originalChars = new String[len];
+	for (int i = 0; i < len; i++) {
 	    originalChars[i] = Character.toString(original.charAt(i));
+	}
+
+	Node[] nodes = new Node[len];
+	for (int i = 0; i < len; i++){
+	    this.makeNode(originalChars[i], Arrays.copyOfRange(originalChars, i, len));
 	}
     }
 
-    // publc Node makeNode(String[] characters){
-	
-    // }
+    public Node makeNode(String data, String[] characters){
+	Node node = new Node(data, characters[0]);
+	return node;
+    }
 
     public Node min(){
 	Node minNode = new Node("A", "B", "C");
