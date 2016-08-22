@@ -1,15 +1,15 @@
 public class Node {
     private String data;
-    private String childOne;
-    private String childTwo;
+    private Node childOne;
+    private Node childTwo;
 
-    public Node(String givenData, String givenChildOne, String givenChildTwo){
+    public Node(String givenData, Node givenChildOne, Node givenChildTwo){
 	data = givenData;
 	childOne = givenChildOne;
 	childTwo = givenChildTwo;
     }
 
-    public Node(String givenData, String givenChildOne){
+    public Node(String givenData, Node givenChildOne){
 	data = givenData;
 	childOne = givenChildOne;
 	childTwo = null;
@@ -25,12 +25,22 @@ public class Node {
 	return this.data;
     }
 
-    public String getChildOne(){
+    public Node getChildOne(){
 	return this.childOne;
     }
 
-    public String getChildTwo(){
+    public void setChildOne(String newChildOne){
+	Node childOne = new Node(newChildOne);
+	this.childOne = childOne;
+    }
+
+    public Node getChildTwo(){
 	return this.childTwo;
+    }
+
+    public void setChildTwo(String newChildTwo){
+	Node childTwo = new Node(newChildTwo);
+	this.childTwo = childTwo;
     }
 
     public String toString(){

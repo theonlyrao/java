@@ -14,26 +14,26 @@ public class PriorityQueueTest {
     //     assertEquals("IOPRRTY", classUnderTest.deleteMin());
     // }
 
-    @Test public void trivialMakeNode() {
-	PriorityQueue classUnderTest = new PriorityQueue("test");
-	String[] chars = new String[1];
-	chars[0] = "B";
+    // @Test public void trivialMakeNode() {
+    // 	PriorityQueue classUnderTest = new PriorityQueue("test");
+    // 	String[] chars = new String[1];
+    // 	chars[0] = "B";
 
-	Node aNode = classUnderTest.makeNode("A", chars);
-	assertEquals("A", aNode.getData());
-	assertEquals("B", aNode.getChildOne());
-	assertEquals(null, aNode.getChildTwo());
-    }
+    // 	Node aNode = classUnderTest.makeNode("A", chars);
+    // 	assertEquals("A", aNode.getData());
+    // 	assertThat(aNode.getChildOne()).isInstanceOf(Node.class);
+    // 	assertEquals("B", aNode.getChildOne().getData());
+    // 	assertEquals(null, aNode.getChildTwo());
+    // }
 
     @Test public void priorityQueueExists() {
-	PriorityQueue classUnderTest = new PriorityQueue("AB");
+	PriorityQueue queue = new PriorityQueue("ABC");
 
-	assertThat(classUnderTest.nodes[0]).isInstanceOf(Node.class);
-	assertThat(classUnderTest.nodes[1]).isInstanceOf(Node.class);		
-	assertEquals(classUnderTest.nodes[0].getData(), "A");
-	assertEquals(classUnderTest.nodes[0].getChildOne(), "B");	
-	assertEquals("B", classUnderTest.nodes[1].getData());
-	assertEquals(null, classUnderTest.nodes[1].getChildOne());	
+	assertThat(queue.nodes[0]).isInstanceOf(Node.class);
+	assertEquals("A", queue.nodes[0].getData());
+	assertThat(queue.nodes[0].getChildOne()).isInstanceOf(Node.class);
+	assertEquals("B", queue.nodes[0].getChildOne().getData());
+	assertEquals(null, queue.nodes[0].getChildOne().getChildOne());	
     }
     
 }
